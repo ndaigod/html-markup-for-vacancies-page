@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HR APP</title>
+    <link rel="stylesheet" type="text/css" href="vacancies_page_style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <script src="tabs.js"></script>
+    <script src="dropdown.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>HR APP</h1>
+      <button class="tablinks" onclick="openTab(event, 'Interview')">
+        Interview
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'Vacancies')">
+        Vacancies
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'Candidates')">
+        Candidates
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'Management')">
+        Management
+      </button>
+    </div>
+
+    <div id="Interview" class="tabcontent">
+      <h3>Interview</h3>
+    </div>
+
+    <div id="Vacancies" class="tabcontent">
+      <div class="search">
+        <div class="ui-widget">
+          <i class="material-icons">search</i>
+          <input id="tags" type="text" placeholder="Search for vacancies" />
+        </div>
+      </div>
+      <h3>Vacancies</h3>
+
+      <div class="filter-dropdown">
+        <p>Filter by</p>
+        <button onclick="myFunction(true)" class="filter-drop-btn">
+          <i class="material-icons">keyboard_arrow_down</i>
+        </button>
+        <div id="filter-dropdown" class="filter-dropdown-content">
+          <p>Java</p>
+          <p>.Net</p>
+          <p>JavaScript</p>
+          <p>Python</p>
+          <p>Ruby</p>
+          <p>Swift</p>
+          <p>PHP</p>
+        </div>
+      </div>
+
+      <br />
+
+      <table class="vacancies-table">
+        <tr class="header">
+          <th style="width:25%;">Some Information</th>
+          <th style="width:25%;">Some Information</th>
+          <th style="width:25%;">Some Information</th>
+          <th style="width:25%;">Some Information</th>
+        </tr>
+        <tr>
+          <td>Java Developer</td>
+        </tr>
+        <tr>
+          <td>Java Developer</td>
+        </tr>
+        <tr>
+          <td>Java Developer</td>
+        </tr>
+        <tr>
+          <td>Java Developer</td>
+        </tr>
+        <tr>
+          <td>Java Developer</td>
+        </tr>
+      </table>
+
+      <br />
+
+      <div class="pagination">
+        <p>Rows per page:</p>
+        <button class="pagination-drop-btn">
+          10
+          <i class="material-icons" style="font-size: 15px;">arrow_drop_down</i>
+        </button>
+        <p>1-10 of 100</p>
+        <button class="prev-page-btn">
+          <i class="material-icons">chevron_left</i>
+        </button>
+        <button class="next-page-btn">
+          <i class="material-icons">chevron_right</i>
+        </button>
+      </div>
+    </div>
+
+    <div id="Candidates" class="tabcontent">
+      <h3>Candidates</h3>
+    </div>
+
+    <div id="Management" class="tabcontent">
+      <h3>Management</h3>
+    </div>
+    <script>
+      $(function() {
+        var availableTags = [
+          "ActionScript",
+          "AppleScript",
+          "Asp",
+          "BASIC",
+          "C",
+          "C++",
+          "Clojure",
+          "COBOL",
+          "ColdFusion",
+          "Erlang",
+          "Fortran",
+          "Groovy",
+          "Haskell",
+          "Java",
+          "JavaScript",
+          "Lisp",
+          "Perl",
+          "PHP",
+          "Python",
+          "Ruby",
+          "Scala",
+          "Scheme"
+        ];
+        $("#tags").autocomplete({
+          source: availableTags
+        });
+      });
+    </script>
+  </body>
+</html>
